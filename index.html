@@ -5,15 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lista de Espera | Primeira Eucaristia - CAJU</title>
 
-  <!-- Fonte moderna -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- CSS externo -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="container">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="assets/logo-caju.png" alt="Comunidade CAJU">
+    </div>
+
     <div class="header">
       <span class="badge">🕊️</span>
       <h1>Lista de Espera</h1>
@@ -22,36 +25,44 @@
 
     <div class="message">
       <strong>Seja bem-vindo(a)!</strong><br><br>
-      Com alegria, informamos que as vagas para a turma de <strong>Primeira Eucaristia</strong> da Comunidade <strong>CAJU</strong> já foram preenchidas.
+      As vagas para a turma de <strong>Primeira Eucaristia</strong> já foram preenchidas.
       <br><br>
-      Pensando com carinho em cada família, disponibilizamos esta <strong>lista de espera</strong>. Caso ocorram desistências ou abertura de novas vagas, entraremos em contato respeitando a ordem de inscrição.
-      <br><br>
-      Pedimos que preencha os dados abaixo com atenção. Eles serão utilizados <strong>exclusivamente</strong> para contato referente à formação.
+      Criamos esta <strong>lista de espera</strong> para acolher quem ainda deseja participar.
+      Caso ocorram desistências ou abertura de novas vagas, entraremos em contato respeitando a ordem de inscrição.
       <br><br>
       Que Deus abençoe esta caminhada 🙏
     </div>
 
     <form id="listaEspera">
-      <label class="label" for="nome">Nome</label>
-      <input id="nome" type="text" name="nome" placeholder="Nome completo" autocomplete="name" required>
+      <label class="label">Nome completo</label>
+      <input type="text" name="nome" required>
 
-      <label class="label" for="telefone">Telefone / WhatsApp</label>
-      <input id="telefone" type="tel" name="telefone" placeholder="(91) 9xxxx-xxxx" autocomplete="tel" required>
+      <label class="label">Telefone / WhatsApp</label>
+      <input type="tel" name="telefone" required>
 
       <button id="btnSubmit" type="submit">
         Entrar na lista de espera
       </button>
     </form>
 
-    <div id="status" class="status" role="status" aria-live="polite"></div>
+    <div id="status" class="status"></div>
 
-    <div class="info">
-      🔒 Seus dados serão usados apenas para contato sobre a turma.<br>
-      📞 O contato será feito exclusivamente pelo telefone informado.
+    <!-- QR CODE -->
+    <div class="qrcode">
+      <p>📲 Aponte a câmera e compartilhe</p>
+      <img 
+        src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://https://listaesperacaju.vercel.app/"
+        alt="QR Code Lista de Espera">
     </div>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+      <a href="https://instagram.com/comunidadecaju" target="_blank">📸 Instagram</a>
+      <a href="https://wa.me/5591984793467" target="_blank">💬 WhatsApp</a>
+    </footer>
+
   </div>
 
-  <!-- JS externo -->
   <script src="script.js"></script>
 </body>
 </html>
