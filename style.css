@@ -175,3 +175,13 @@ form button:disabled{
   text-align:center;
   line-height:1.5;
 }
+
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.logo img {
+  max-width: 120px;
+}
