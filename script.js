@@ -2,7 +2,7 @@ const form = document.getElementById("listaEspera");
 const statusMsg = document.getElementById("status");
 const btn = document.getElementById("btnSubmit");
 
-const APPS_SCRIPT_URL = "https://script.google.com/home/projects/1iVILNMOhJVmdqJzHqdl_VgBq5dMG5EfZwFLjIEYmkIm65LShdCw6PQA8/edit";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzCkIRhUgyp8vtIRwJLVEljcWR1faWMvEOEhv1Thd5bOaZk43nJ9MsrDMKQEXzyTevE/exec";
 
 function setStatus(msg, type) {
   statusMsg.textContent = msg;
