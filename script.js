@@ -4,44 +4,26 @@ const btn = document.getElementById("btnSubmit");
 
 const APPS_SCRIPT_URL = "COLE_AQUI_A_URL_DO_APPS_SCRIPT";
 
-function setStatus(message, type) {
-  statusMsg.textContent = message;
-  statusMsg.className = "status" + (type ? ` ${type}` : "");
-}
-
-function setLoading(isLoading) {
-  btn.disabled = isLoading;
-  btn.textContent = isLoading ? "Enviando..." : "Entrar na lista de espera";
+function setStatus(msg, type) {
+  statusMsg.textContent = msg;
+  statusMsg.className = "status " + type;
 }
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-
-  if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL.includes("COLE_AQUI")) {
-    setStatus("⚠️ Configure a URL do Apps Script no arquivo script.js.", "error");
-    return;
-  }
-
-  setStatus("", "");
-  setLoading(true);
+  btn.disabled = true;
+  btn.innerText = "Enviando...";
 
   try {
     const formData = new FormData(form);
+    await fetch(APPS_SCRIPT_URL, { method: "POST", body: formData });
 
-    // Opcional: normalizar telefone (bem simples)
-    const tel = (formData.get("telefone") || "").toString().trim();
-    formData.set("telefone", tel);
-
-    await fetch(APPS_SCRIPT_URL, {
-      method: "POST",
-      body: formData,
-    });
-
-    setStatus("✅ Inscrição realizada com sucesso! Em breve entraremos em contato se surgir vaga.", "success");
+    setStatus("✅ Cadastro realizado com sucesso!", "success");
     form.reset();
-  } catch (err) {
-    setStatus("❌ Erro ao enviar. Verifique sua internet e tente novamente.", "error");
+  } catch {
+    setStatus("❌ Erro ao enviar. Tente novamente.", "error");
   } finally {
-    setLoading(false);
+    btn.disabled = false;
+    btn.innerText = "Entrar na lista de espera";
   }
 });
