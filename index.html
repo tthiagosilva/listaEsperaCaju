@@ -37,9 +37,18 @@
       <label class="label" for="nome">Nome</label>
       <input id="nome" type="text" name="nome" placeholder="Nome completo" autocomplete="name" required>
 
-      <label class="label" for="telefone">Telefone / WhatsApp</label>
-      <input id="telefone" type="tel" name="telefone" placeholder="(91) 9xxxx-xxxx" autocomplete="tel" required>
 
+
+    <label class="label" for="telefone">Telefone / WhatsApp</label>
+    <input
+      id="telefone"
+      type="tel"
+      name="telefone"
+      placeholder="(xx)xxxxx-xxxx"
+      maxlength="14"
+      inputmode="numeric"
+      required
+    >
       <button id="btnSubmit" type="submit">
         Entrar na lista de espera
       </button>
