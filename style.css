@@ -179,7 +179,7 @@ form button:disabled{
 .logo {
   display: flex;
   justify-content: center;
-  margin-bottom: 3px;
+  margin-bottom: 12px;
 }
 
 .logo img {
