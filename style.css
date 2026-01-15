@@ -185,3 +185,11 @@ form button:disabled{
 .logo img {
   max-width: 300px;
 }
+
+.message.encerrado {
+  background: rgba(22,163,74,.08);
+  border: 1px solid rgba(22,163,74,.25);
+  padding: 16px;
+  border-radius: 14px;
+  text-align: center;
+}
